@@ -11,7 +11,21 @@ class Group
   def all_americans?
     @people.all? { |p| p.nationality == :us }
   end
+
+  def americans
+    @people.select { |p| p.nationality == :us }
+  end
+
+  def by_country
+    @people.group_by(&:nationality)
+  end
+
+  def americans_and_others
+    @people.partition { |p| p.nationality == :us }
+  end
 end
+
+
 
 # Proc.new
 
