@@ -25,11 +25,11 @@ class Group
   end 
 
   def populations
-    @people.map { |p| p.nationality }.tally
+    @people.map(&:nationality).tally
   end
 
   def nationalities
-    @people.map { |p| p.nationality }.uniq.sort
+    @people.map(&:nationality).uniq.sort
   end
 end
 
