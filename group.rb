@@ -27,6 +27,10 @@ class Group
   def populations
     @people.map { |p| p.nationality }.tally
   end
+
+  def nationalities
+    @people.map { |p| p.nationality }.uniq.sort
+  end
 end
 
 
