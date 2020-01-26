@@ -11,6 +11,12 @@ class GroupTest < Minitest::Test
     ])
 
     assert_equal ["Steve", "John"], group.names
+
+    group = Group.new([
+      Person.new(name: "Steve", nationality: :us),
+    ])
+
+    assert_equal ["Steve"], group.names
   end
 
   def test_all_americans
