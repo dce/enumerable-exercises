@@ -11,4 +11,8 @@ class Person
   def nationality
     @nationality
   end
+
+  def ==(other)
+    @name == other.name && @nationality == other.nationality
+  end
 end
