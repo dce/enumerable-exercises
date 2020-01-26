@@ -25,14 +25,14 @@ class GroupTest < Minitest::Test
       Person.new(name: "John", nationality: :us)
     ])
 
-    assert group.all_americans?
+    assert_equal true, group.all_americans?
 
     group = Group.new([
       Person.new(name: "Steve", nationality: :us),
       Person.new(name: "Pepe", nationality: :mx)
     ])
 
-    assert !group.all_americans?
+    assert_equal false, group.all_americans?
   end
 
   def test_americans
