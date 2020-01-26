@@ -22,6 +22,10 @@ class Group
 
   def americans_and_others
     @people.partition { |p| p.nationality == :us }
+  end 
+
+  def populations
+    @people.map { |p| p.nationality }.tally
   end
 end
 
